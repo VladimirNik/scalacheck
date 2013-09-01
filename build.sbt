@@ -33,6 +33,10 @@ libraryDependencies <++= (scalaVersion){sVer =>
   else Seq("org.scala-lang" % "scala-parser-combinators" % sVer)
 }
 
+libraryDependencies += compilerPlugin("test.org" %% "printplugin" % "1.0")
+
+scalacOptions += "-P:printplugin:oversrc"
+
 javacOptions ++= Seq("-Xmx1024M")
 
 scalacOptions += "-deprecation"
